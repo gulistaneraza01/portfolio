@@ -15,12 +15,13 @@ export const DATA = {
 
   skills: [
     // Core Backend & Systems (MOST IMPORTANT)
-    "Go",
+    // "Go",
     "Java",
     "Node.js",
     "Microservices",
     "Distributed Systems",
     "Event-Driven Architecture",
+    "Javascript",
 
     // Cloud & DevOps
     "Docker",
@@ -34,7 +35,7 @@ export const DATA = {
     // APIs & Backend Frameworks
     "Spring Boot",
     "Express.js",
-    "FastAPI",
+    // "FastAPI",
     "OAuth2 / OIDC / SSO",
 
     // Databases & Streaming
@@ -47,7 +48,7 @@ export const DATA = {
     // Frontend (Support Skill)
     "React",
     "Redux",
-    "JavaScript",
+    // "JavaScript",
     "TypeScript",
 
     // AI & Intelligent Systems
