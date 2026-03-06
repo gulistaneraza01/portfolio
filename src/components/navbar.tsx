@@ -14,8 +14,14 @@ import { cn } from "@/lib/utils";
 import Link from "next/link";
 
 export default function Navbar() {
-  const handleNavClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith("#")) {
+  const handleNavClick = (
+    e: React.MouseEvent<HTMLAnchorElement>,
+    href: string,
+  ) => {
+    if (href === "/" && window.location.pathname === "/") {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } else if (href.startsWith("#")) {
       e.preventDefault();
       const id = href.substring(1);
       const targetElement = document.getElementById(id);
@@ -23,7 +29,7 @@ export default function Navbar() {
         targetElement.scrollIntoView({ behavior: "smooth" });
       }
     }
-  }
+  };
 
   return (
     <div className="pointer-events-none fixed inset-x-0 bottom-0 z-30 mx-auto mb-4 flex origin-bottom h-full max-h-14">
@@ -35,10 +41,10 @@ export default function Navbar() {
               <TooltipTrigger asChild>
                 <Link
                   href={item.href}
-                  onClick={(e)=>handleNavClick(e,item.href)}
+                  onClick={(e) => handleNavClick(e, item.href)}
                   className={cn(
                     buttonVariants({ variant: "ghost", size: "icon" }),
-                    "size-12"
+                    "size-12",
                   )}
                 >
                   <item.icon className="size-4" />
@@ -61,7 +67,7 @@ export default function Navbar() {
                     href={social.url}
                     className={cn(
                       buttonVariants({ variant: "ghost", size: "icon" }),
-                      "size-12"
+                      "size-12",
                     )}
                   >
                     <social.icon className="size-4" />

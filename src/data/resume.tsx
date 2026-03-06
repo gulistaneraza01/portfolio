@@ -30,7 +30,7 @@ export const DATA = {
     { name: "Kubernetes", icon: "/kubernetes-default.svg" },
     { name: "AWS", iconDark: "/aws-dark.svg", iconLight: "/aws-default.svg" },
     { name: "Terraform", icon: "/terraform-default.svg" },
-    { name: "GitHub Action", icon: "/github-actions-default.svg" },
+    { name: "GitHub Actions", icon: "/github-actions-default.svg" },
   
     // Backend Frameworks & APIs
     { name: "Spring Boot", icon: "/spring-boot-default.svg" },

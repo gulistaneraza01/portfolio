@@ -24,12 +24,11 @@ portfolio/
 
 ### `/public/` - Static Assets
 
-| File | Purpose |
-|------|---------|
-| `me.png` | Your profile photo/avatar displayed in the hero section |
-| `cmh.png` | Logo for Computer Market Hub (work experience) |
-| `munshot.png` | Logo for Munshot (work experience) |
-| `bgiem.png` | Logo for Baderia Global Institute (education) |
+| File               | Purpose                                            |
+| ------------------ | -------------------------------------------------- |
+| `me.png`           | Profile photo/avatar displayed in the hero section |
+| `company-logo.png` | Logo for work experience                           |
+| `school-logo.png`  | Logo for education                                 |
 
 > **Note:** Add company/institution logos here. Use PNG, JPG, or SVG format. Reference them as `/filename.ext` in the data file.
 
@@ -39,45 +38,45 @@ portfolio/
 
 #### `resume.tsx` - **Main Content File** ⭐
 
-This is the most important file! It contains ALL your portfolio content:
+This is the most important file. It contains all portfolio content:
 
 ```typescript
 export const DATA = {
   // Personal Information
-  name: "Samiksha Shukla",
-  initials: "SS",
+  name: "Your Name",
+  initials: "YN",
   description: "...",          // Short bio shown in hero
   summary: "...",              // Detailed about section
   avatarUrl: "/me.png",        // Profile photo
-  location: "India",
-  
+  location: "Your Location",
+
   // Skills Array
-  skills: ["PyTorch", "Langchain", ...],
-  
+  skills: ["Skill1", "Skill2"],
+
   // Work Experience Array
   work: [
     {
       company: "Company Name",
       title: "Your Role",
       logoUrl: "/logo.png",
-      start: "August 2024",
-      end: "December 2024",
+      start: "Month Year",
+      end: "Month Year",
       description: "What you did...",
       href: "https://company.com",
       location: "Remote",
       badges: []
     }
   ],
-  
+
   // Education Array
   education: [{...}],
-  
+
   // Projects Array
   projects: [{...}],
-  
+
   // Hackathons Array
   hackathons: [{...}],
-  
+
   // Social Links
   contact: {
     social: {
@@ -97,30 +96,30 @@ Contains blog-related data and MDX file mappings.
 
 ### `/src/app/` - Pages
 
-| File | Purpose |
-|------|---------|
-| `page.tsx` | **Homepage** - Renders all sections (hero, about, work, education, skills, projects, hackathons, contact) |
-| `layout.tsx` | Root layout with theme provider, fonts, and metadata |
-| `globals.css` | Global styles and CSS variables |
-| `favicon.ico` | Browser tab icon |
-| `blog/` | Blog page and individual post pages |
+| File          | Purpose                                              |
+| ------------- | ---------------------------------------------------- |
+| `page.tsx`    | Homepage that renders all sections                   |
+| `layout.tsx`  | Root layout with theme provider, fonts, and metadata |
+| `globals.css` | Global styles and CSS variables                      |
+| `favicon.ico` | Browser tab icon                                     |
+| `blog/`       | Blog page and individual post pages                  |
 
 ---
 
 ### `/src/components/` - UI Components
 
-| File | Purpose |
-|------|---------|
-| `navbar.tsx` | Top navigation bar with links and theme toggle |
-| `resume-card.tsx` | Card component for work/education entries |
-| `project-card.tsx` | Card component for project entries |
-| `hackathon-card.tsx` | Card component for hackathon entries |
-| `mode-toggle.tsx` | Dark/Light theme toggle button |
-| `theme-provider.tsx` | Theme context provider |
-| `icons.tsx` | SVG icon components (GitHub, LinkedIn, X, etc.) |
-| `mdx.tsx` | MDX renderer for blog posts |
-| `ui/` | Base UI components (avatar, badge, button, card, dock, tooltip) |
-| `magicui/` | Animation components (blur-fade, blur-fade-text, dock) |
+| File                 | Purpose                                                         |
+| -------------------- | --------------------------------------------------------------- |
+| `navbar.tsx`         | Top navigation bar with links and theme toggle                  |
+| `resume-card.tsx`    | Card component for work/education entries                       |
+| `project-card.tsx`   | Card component for project entries                              |
+| `hackathon-card.tsx` | Card component for hackathon entries                            |
+| `mode-toggle.tsx`    | Dark/Light theme toggle button                                  |
+| `theme-provider.tsx` | Theme context provider                                          |
+| `icons.tsx`          | SVG icon components                                             |
+| `mdx.tsx`            | MDX renderer for blog posts                                     |
+| `ui/`                | Base UI components (avatar, badge, button, card, dock, tooltip) |
+| `magicui/`           | Animation components (blur-fade, blur-fade-text, dock)          |
 
 ---
 
@@ -128,26 +127,31 @@ Contains blog-related data and MDX file mappings.
 
 Store your blog posts as `.mdx` files here. Each file becomes a blog post.
 
-Example: `hello-world.mdx`
+Example:
+
+```
+hello-world.mdx
+```
 
 ---
 
 ### Configuration Files
 
-| File | Purpose |
-|------|---------|
+| File                 | Purpose                          |
+| -------------------- | -------------------------------- |
 | `tailwind.config.ts` | Tailwind CSS theme customization |
-| `tsconfig.json` | TypeScript settings |
-| `next.config.mjs` | Next.js configuration |
-| `components.json` | Shadcn/UI configuration |
-| `package.json` | Project dependencies |
-| `.eslintrc.json` | ESLint rules |
+| `tsconfig.json`      | TypeScript settings              |
+| `next.config.mjs`    | Next.js configuration            |
+| `components.json`    | Shadcn/UI configuration          |
+| `package.json`       | Project dependencies             |
+| `.eslintrc.json`     | ESLint rules                     |
 
 ---
 
 ## 🚀 How to Run
 
 ### Prerequisites
+
 - Node.js 18+ installed
 - pnpm, npm, or yarn
 
@@ -157,32 +161,42 @@ Example: `hello-world.mdx`
 # Navigate to portfolio folder
 cd portfolio
 
-# Install dependencies (using pnpm - recommended)
+# Install dependencies
 pnpm install
+```
 
-# OR using npm
+Or:
+
+```bash
 npm install
+```
 
-# OR using yarn
+Or:
+
+```bash
 yarn install
 ```
+
+---
 
 ### Development
 
 ```bash
-# Start development server
 pnpm dev
-
-# The site will be available at http://localhost:3000
 ```
+
+The site will run at:
+
+```
+http://localhost:3000
+```
+
+---
 
 ### Production Build
 
 ```bash
-# Create production build
 pnpm build
-
-# Start production server
 pnpm start
 ```
 
@@ -194,109 +208,108 @@ pnpm start
 
 Edit `/src/data/resume.tsx`:
 
-- **Personal Info**: Change `name`, `initials`, `description`, `summary`
-- **Skills**: Modify the `skills` array
-- **Work Experience**: Add/edit entries in the `work` array
-- **Education**: Add/edit entries in the `education` array
-- **Projects**: Add/edit entries in the `projects` array
-- **Hackathons**: Add/edit entries in the `hackathons` array
-- **Social Links**: Update URLs in `contact.social`
+- Personal Info
+- Skills
+- Work Experience
+- Education
+- Projects
+- Hackathons
+- Social Links
+
+---
 
 ### 2. Update Images
 
-1. Add your images to `/public/`
-2. Reference them in `resume.tsx` as `/imagename.ext`
-3. Common images:
-   - Profile photo: `me.png`
-   - Company logos: `companyname.png`
-   - School logos: `schoolname.png`
+1. Add images to `/public/`
+2. Reference them in `resume.tsx` using:
 
-### 3. Add Company Logos
+```
+/imagename.ext
+```
 
-For work experience entries without logos:
-1. Download the company logo
-2. Save it to `/public/` (e.g., `companyname.png`)
-3. Update the `logoUrl` in resume.tsx to `/companyname.png`
+Common images:
 
-### 4. Customize Theme
+- Profile photo
+- Company logos
+- School logos
 
-Edit `tailwind.config.ts` to change colors, fonts, and other theme settings.
+---
 
-### 5. Add Blog Posts
+### 3. Customize Theme
+
+Edit:
+
+```
+tailwind.config.ts
+```
+
+to modify colors, fonts, and design settings.
+
+---
+
+### 4. Add Blog Posts
 
 1. Create a new `.mdx` file in `/content/`
 2. Add frontmatter and content
-3. The post will automatically appear on the blog page
+3. The post will automatically appear on the blog page.
 
 ---
 
 ## 📱 Key Sections
 
-| Section | Description | Data Source |
-|---------|-------------|-------------|
-| Hero | Name, short bio, profile photo | `name`, `description`, `avatarUrl` |
-| About | Detailed summary/background | `summary` |
-| Work Experience | Professional experience timeline | `work[]` |
-| Education | Academic background | `education[]` |
-| Skills | Technical skills badges | `skills[]` |
-| Projects | Featured projects grid | `projects[]` |
-| Hackathons | Hackathon participation timeline | `hackathons[]` |
-| Contact | Get in touch message with social links | `contact.social` |
+| Section         | Description                      | Data Source                        |
+| --------------- | -------------------------------- | ---------------------------------- |
+| Hero            | Name, short bio, profile photo   | `name`, `description`, `avatarUrl` |
+| About           | Detailed summary                 | `summary`                          |
+| Work Experience | Professional timeline            | `work[]`                           |
+| Education       | Academic background              | `education[]`                      |
+| Skills          | Technical skill badges           | `skills[]`                         |
+| Projects        | Featured project grid            | `projects[]`                       |
+| Hackathons      | Hackathon timeline               | `hackathons[]`                     |
+| Contact         | Social links and contact options | `contact.social`                   |
 
 ---
 
 ## 🎨 Features
 
-- ✅ **Dark/Light Mode** - Automatic theme switching
-- ✅ **Responsive Design** - Mobile-first approach
-- ✅ **Animations** - Blur fade effects on scroll
-- ✅ **SEO Optimized** - Meta tags and structured data
-- ✅ **Fast Performance** - Next.js optimizations
-- ✅ **Blog Support** - MDX-powered blog
-- ✅ **Easy Updates** - Single data file for all content
+- Dark / Light mode
+- Responsive design
+- Scroll animations
+- SEO optimized
+- Fast performance using Next.js
+- MDX blog support
+- Single data file for easy updates
 
 ---
 
 ## 🔧 Troubleshooting
 
-### Images not showing?
-- Ensure images are in `/public/`
-- Check file names (case-sensitive)
-- Use correct path format: `/imagename.ext`
+### Images not showing
 
-### Content not updating?
-- Restart the dev server after changing `resume.tsx`
-- Clear browser cache
+- Ensure images are inside `/public`
+- Verify correct file names
+- Use correct path format:
 
-### Build errors?
-- Run `pnpm install` to ensure all dependencies are installed
-- Check for TypeScript errors in the terminal
+```
+/imagename.ext
+```
 
 ---
 
-## 📞 Current Portfolio Content
+### Content not updating
 
-### Personal Info
-- **Name**: Samiksha Shukla
-- **Role**: AI/ML Engineer
-- **Focus**: Machine Learning, Deep Learning, NLP, Backend Development
+Restart the development server:
 
-### Experience (2 positions)
-1. Computer Market Hub - AI Intern (Aug 2024 - Dec 2024)
-2. Munshot - AI Intern (Aug 2025 - Sept 2025)
+```
+pnpm dev
+```
 
-### Projects (4 projects)
-1. ContextMemory - Memory system for AI applications
-2. AIxAI - MCP-powered agent generator
-3. HomeSage - Real estate price prediction
-4. n8n Clone - Visual workflow automation
+---
 
-### Hackathons (2 events)
-1. Smart India Hackathon (SIH) - Top finalist
-2. Hack JKLU - 3rd Place Winner
+### Build errors
 
-### Education
-- B.Tech in Computer Science, BGIEM (2021-2025)
+Reinstall dependencies:
 
-### Skills
-PyTorch, Langchain, RAG, LangGraph, PydanticAI, Python, Machine Learning, Deep Learning, Agentic AI, FastAPI, SQLAlchemy, Pydantic
+```
+pnpm install
+```
