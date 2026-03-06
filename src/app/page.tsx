@@ -97,7 +97,7 @@ export default function Page() {
           ))}
         </div>
       </section>
-      <section id="skills">
+      {/* <section id="skills">
         <div className="flex min-h-0 flex-col gap-y-3">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
@@ -110,14 +110,20 @@ export default function Page() {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
       <section id="projects">
-        <div className="space-y-12 w-full py-12">
+        <div className="space-y-12 w-full py-4">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
             <div className="flex flex-col items-center justify-center space-y-4 text-center">
-              <div className="space-y-2">
-                <div className="inline-block rounded-lg bg-foreground text-background px-3 py-1 text-sm">
-                  My Projects
+              <div className="space-y-3">
+                <div className="flex items-center w-full">
+                  <div className="flex-1 h-px bg-gradient-to-r from-transparent from-5% via-border via-95% to-transparent" />
+                  <div className="border bg-primary z-10 rounded-xl px-4 py-1">
+                    <span className="text-background text-sm font-medium">
+                      My Projects
+                    </span>
+                  </div>
+                  <div className="flex-1 h-px bg-gradient-to-l from-transparent from-5% via-border via-95% to-transparent" />
                 </div>
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-5xl">
                   Check out my latest work
