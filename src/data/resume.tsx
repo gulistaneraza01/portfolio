@@ -14,50 +14,53 @@ export const DATA = {
   avatarUrl: "/me.png",
 
   skills: [
-    // Core Backend & Systems (MOST IMPORTANT)
-    // "Go",
-    "Java",
-    "Node.js",
-    "Microservices",
-    "Distributed Systems",
-    "Event-Driven Architecture",
-    "Javascript",
-
+    // Core Languages
+    { name: "Java", icon: "/java-default.svg" },
+    { name: "Node.js", icon: "/nodejs-default.svg" },
+    { name: "Javascript", icon: "/javascript-default.svg" },
+    { name: "TypeScript", icon: "/typescript-default.svg" },
+  
+    // Architecture & System Design
+    { name: "Microservices", icon: "/microservices.png" },
+    { name: "Distributed Systems", icon: "/distributed.png" },
+    { name: "Event-Driven Architecture", icon: "/iteration.png" },
+  
     // Cloud & DevOps
-    "Docker",
-    "Kubernetes",
-    "AWS",
-    "CI/CD",
-    "Terraform",
-    "Git",
-    "GitHub",
-
-    // APIs & Backend Frameworks
-    "Spring Boot",
-    "Express.js",
-    // "FastAPI",
-    "OAuth2 / OIDC / SSO",
-
+    { name: "Docker", icon: "/docker-default.svg" },
+    { name: "Kubernetes", icon: "/kubernetes-default.svg" },
+    { name: "AWS", iconDark: "/aws-dark.svg", iconLight: "/aws-default.svg" },
+    { name: "Terraform", icon: "/terraform-default.svg" },
+    { name: "GitHub Action", icon: "/github-actions-default.svg" },
+  
+    // Backend Frameworks & APIs
+    { name: "Spring Boot", icon: "/spring-boot-default.svg" },
+    {
+      name: "Express",
+      iconDark: "/expressjs-dark.svg",
+      iconLight: "/expressjs-default.svg",
+    },
+    { name: "OAuth2 / OIDC / SSO", icon: "/oauth.svg" },
+  
     // Databases & Streaming
-    "PostgreSQL",
-    "MongoDB",
-    "Redis",
-    "Apache Kafka",
-    "SQL",
-
-    // Frontend (Support Skill)
-    "React",
-    "Redux",
-    // "JavaScript",
-    "TypeScript",
-
-    // AI & Intelligent Systems
-    "RAG Systems",
-
+    { name: "PostgreSQL", icon: "/postgresql-default.svg" },
+    { name: "MongoDB", iconDark: "/mongodb-dark.svg", iconLight: "/mongodb-light.svg" },
+    { name: "Redis", icon: "/redis-default.svg" },
+    { name: "Apache Kafka", iconDark: "/apache-kafka-dark.svg", iconLight: "/apache-kafka-light.svg" },
+  
+    // Frontend (Supporting)
+    { name: "React", icon: "/react-dark.svg" },
+    { name: "React Query", icon: "/reactquery-default.svg" },
+    { name: "Redux", icon: "/redux-default.svg" },
+    { name: "Tailwind CSS", icon: "/tailwindcss-default.svg" },
+  
+    // AI Systems
+    { name: "RAG Systems", iconDark: "/rag-dark.png", iconLight: "/rag-default.png" },
+  
     // Developer Tools
-    "Prisma",
+    { name: "Git", icon: "/git-default.svg" },
+    { name: "GitHub", iconDark: "/github-dark.svg", iconLight: "/github-default.svg" },
+    { name: "Prisma", iconDark: "/prisma-dark.svg", iconLight: "/prisma-default.svg" },
   ],
-
   navbar: [{ href: "/", icon: HomeIcon, label: "Home" }],
   contact: {
     email: "gulistaneraza01@gmail.com",
@@ -114,7 +117,7 @@ export const DATA = {
       href: "https://imyls.courses.store/",
       badges: [],
       location: "Hybrid",
-      title: "Data Analyst Intern",
+      title: "Data Analyst",
       logoUrl: "/disciplescorporate.png",
       start: "February 2025",
       end: "March 2025",

@@ -1,3 +1,5 @@
+"use client";
+
 import { HackathonCard } from "@/components/hackathon-card";
 import BlurFade from "@/components/magicui/blur-fade";
 import BlurFadeText from "@/components/magicui/blur-fade-text";
@@ -6,12 +8,14 @@ import { ResumeCard } from "@/components/resume-card";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
+import { useTheme } from "next-themes";
 import Link from "next/link";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
+  const { theme } = useTheme();
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
@@ -97,20 +101,43 @@ export default function Page() {
           ))}
         </div>
       </section>
-      {/* <section id="skills">
-        <div className="flex min-h-0 flex-col gap-y-3">
+      <section id="skills">
+        <div className="flex min-h-0 flex-col gap-y-4">
           <BlurFade delay={BLUR_FADE_DELAY * 9}>
             <h2 className="text-xl font-bold">Skills</h2>
           </BlurFade>
-          <div className="flex flex-wrap gap-1">
-            {DATA.skills.map((skill, id) => (
-              <BlurFade key={skill} delay={BLUR_FADE_DELAY * 10 + id * 0.05}>
-                <Badge key={skill}>{skill}</Badge>
-              </BlurFade>
-            ))}
+          <div className="flex flex-wrap gap-2">
+            {DATA.skills.map((skill, id) => {
+              const iconSrc =
+                "iconDark" in skill && "iconLight" in skill
+                  ? theme === "dark"
+                    ? skill.iconDark
+                    : skill.iconLight
+                  : skill.icon;
+
+              return (
+                <BlurFade
+                  key={skill.name}
+                  delay={BLUR_FADE_DELAY * 10 + id * 0.05}
+                >
+                  <div className="border bg-background border-border ring-2 ring-border/20 rounded-full h-8 w-fit px-4 flex items-center gap-2">
+                    {iconSrc && (
+                      <img
+                        src={iconSrc}
+                        alt={skill.name}
+                        className="size-4 rounded overflow-hidden object-contain"
+                      />
+                    )}
+                    <span className="text-foreground text-sm font-medium">
+                      {skill.name}
+                    </span>
+                  </div>
+                </BlurFade>
+              );
+            })}
           </div>
         </div>
-      </section> */}
+      </section>
       <section id="projects">
         <div className="space-y-12 w-full py-4">
           <BlurFade delay={BLUR_FADE_DELAY * 11}>
