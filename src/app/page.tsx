@@ -44,7 +44,7 @@ export default function Page() {
               />
               <BlurFade delay={BLUR_FADE_DELAY * 2.5}>
                 <Link
-                  href="mailto:samikshasy2908@gmail.com"
+                  href={`mailto:${DATA.contact.email}`}
                   className="inline-flex items-center gap-2 text-sm font-medium text-foreground hover:underline transition-all mt-2"
                 >
                   <svg
