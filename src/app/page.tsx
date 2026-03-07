@@ -10,12 +10,21 @@ import { Badge } from "@/components/ui/badge";
 import { DATA } from "@/data/resume";
 import { useTheme } from "next-themes";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 import Markdown from "react-markdown";
 
 const BLUR_FADE_DELAY = 0.04;
 
 export default function Page() {
   const { theme } = useTheme();
+  const [mount, setMount] = useState(false);
+
+  useEffect(() => {
+    setMount(true);
+  }, []);
+
+  if (!mount) return null;
+
   return (
     <main className="flex flex-col min-h-[100dvh] space-y-10">
       <section id="hero">
